@@ -1,0 +1,4 @@
+services:
+#    rth_motorbike.example:
+#        class: Rth\MotorbikeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

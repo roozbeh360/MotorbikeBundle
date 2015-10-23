@@ -1,0 +1,26 @@
+{
+    "name": "Rth/motorbike-bundle",
+    "type": "symfony-bundle",
+    "description": "symfony motorbike bundle for managing online motorbike system .",
+    "keywords": ["push", "notification", "bundle", "symfony2"],
+    "homepage": "https://github.com/roozbeh360/MotorbikeBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roozbeh Baabakaan",
+            "email": "baabakaan@remake.ir",
+            "homepage": "https://github.com/roozbeh360",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": ">=2.7",
+        "friendsofsymfony/user-bundle": "2.0.x-dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rth\\MotorbikeBundle": ""
+        }
+    },
+    "target-dir": "Rth/MotorbikeBundle"
+}

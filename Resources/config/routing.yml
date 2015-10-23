@@ -1,0 +1,3 @@
+rth_motorbike_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: RthMotorbikeBundle:Default:index }
