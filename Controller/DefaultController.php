@@ -12,7 +12,16 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $motorBikes = $this->getDoctrine()->getRepository('RthMotorbikeBundle:Motorbike')->findAll();
+        $config = $this->getParameter('rth_motorbike.config');
+        $dql   = "SELECT a FROM RthMotorbikeBundle:Motorbike a";
+        $query = $this->getDoctrine()->getManager()->createQuery($dql);
+        $paginator  = $this->get('knp_paginator');
+        $motorBikes = $paginator->paginate(
+                $query,
+                $this->getRequest()->query->getInt('page', 1),
+                $config['default']['motorbikes_per_page']
+        );
+    
         return $this->render('RthMotorbikeBundle:Default:Motorbike/list.html.twig', array('motorBikes' => $motorBikes));
     }
     

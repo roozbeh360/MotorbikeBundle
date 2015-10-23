@@ -36,6 +36,8 @@ now add these lines in app/config.yml
                 upload_path: "%kernel.root_dir%/../web/uploads" # upload path will be this. do not change it!
                 image_tumbnail_width: 50 # image thumbnail width , imagick resizer
                 image_tumbnail_height: 50 # image thumbnail height , imagick resizer
+            default:
+                motorbikes_per_page: 5
 		
 		
 update database schema 

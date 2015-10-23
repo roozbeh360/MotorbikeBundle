@@ -31,6 +31,11 @@ class Configuration implements ConfigurationInterface
                             ->integerNode('image_tumbnail_height')->end()
                         ->end()
                     ->end() // general
+                    ->arrayNode('default')
+                        ->children()
+                            ->integerNode('motorbikes_per_page')->end()
+                        ->end()
+                    ->end() // default
                 ->end()
         ;
 
