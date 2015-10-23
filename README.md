@@ -48,8 +48,11 @@ update database schema
 well you must first make your security system config then you need registered user with ROLE_ADMIN to have access 
 to following admin page to add or list motorbikes .
 
-        /admin/motorbike  
+        example.host/admin/motorbike  
 
+public page
+
+        example.host/motorbike 
 
 ## To Do 
 

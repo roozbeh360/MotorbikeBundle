@@ -1,0 +1,39 @@
+{% extends "RthMotorbikeBundle::default_layout.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-8">
+            <h3>{{'default.welcome' | trans}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h6>total motor bikes{{motorBikes | length}}</h6>
+
+            <table>
+                <tr>
+                    <td>image</td>
+                    <td>model</td>
+                    <td>make</td>
+                    <td>price</td>
+                </tr>
+                {% for motorBike in motorBikes %}
+                    <tr>
+                        <td><img src="{{asset(motorBike.image.thumbnail)}}"></td>
+                        <td>{{motorBike.model }}</td>
+                        <td>{{motorBike.make }}</td>
+                        <td>{{motorBike.price }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
+{% block stylesheets %}
+    <style>
+        table td{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+{% endblock %}

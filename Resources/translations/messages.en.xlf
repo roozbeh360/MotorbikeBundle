@@ -26,6 +26,10 @@
                 <source>add.back</source>
                 <target>back</target>
             </trans-unit>
+            <trans-unit id="default.welcome">
+                <source>default.welcome</source>
+                <target>welcome</target>
+            </trans-unit>
             
         </body>
     </file>
