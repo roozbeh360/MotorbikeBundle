@@ -1,0 +1,69 @@
+{% extends "RthMotorbikeBundle::admin_layout.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-8">
+            <h3>{{'list.list' | trans}}</h3>
+        </div>
+        <div class="col-md-4">
+            <a href="{{path('rth_motorbike_motorbike_new')}}" class="btn btn-success">add</a>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            {% for flashMessage in app.session.flashbag.get('rth_motorbike_admin') %}
+                <div class="alert alert-success">
+                    {{ flashMessage | trans}}
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h6>total motor bikes{{motorBikes | length}}</h6>
+
+            <table>
+                <tr>
+                    <td>id</td>
+                    <td>image</td>
+                    <td>model</td>
+                    <td>make</td>
+                    <td>cc</td>
+                    <td>weight</td>
+                    <td>color</td>
+                    <td>price</td>
+                    <td>created</td>
+                    <td>action</td>
+                </tr>
+                {% for motorBike in motorBikes %}
+                    <tr>
+                        <td>{{motorBike.id }}</td>
+                        <td><img src="{{asset(motorBike.image.thumbnail)}}"></td>
+                        <td>{{motorBike.model }}</td>
+                        <td>{{motorBike.make }}</td>
+                        <td>{{motorBike.cc }}</td>
+                        <td>{{motorBike.weight }}</td>
+                        <td>{{motorBike.color }}</td>
+                        <td>{{motorBike.price }}</td>
+                        <td>{{motorBike.created | date }}</td>
+                        <td><a onclick="return(confirm('delete motorbike ?'));" href="{{path('rth_motorbike_motorbike_remove',{'id': motorBike.id})}}"> {{'list.remove' | trans}} </a></td>
+                    </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
+{% block stylesheets %}
+    <style>
+        table td{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+{% endblock %}
+{% block title %}
+{{parent()}} | list motor bikes
+{% endblock %}

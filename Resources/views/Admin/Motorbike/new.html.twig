@@ -1,0 +1,52 @@
+{% extends "RthMotorbikeBundle::admin_layout.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-8">
+            <h3>{{'add.new' | trans}}</h3>
+        </div>
+        <div class="col-md-4">
+            <a href="{{path('rth_motorbike_motorbike_list')}}" class="btn btn-default">{{'add.back' | trans}}</a>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        {{ form_start(form) }}
+        <div class="col-md-8">
+            {{ form_label(form.make) }}
+            {{ form_widget(form.make,{'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="col-md-8">
+            {{ form_label(form.model) }}
+            {{ form_widget(form.model,{'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="col-md-8">
+            {{ form_label(form.cc) }}
+            {{ form_widget(form.cc,{'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="col-md-8">
+            {{ form_label(form.weight) }}
+            {{ form_widget(form.weight,{'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="col-md-8">
+            {{ form_label(form.color) }}
+            {{ form_widget(form.color,{'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="col-md-8">
+            {{ form_label(form.price) }}
+            {{ form_widget(form.price,{'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="col-md-8">
+            {{ form_label(form.image) }}
+            {{ form_widget(form.image,{'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="col-md-8">
+            {{ form_widget(form.submit,{'attr': { 'class': 'btn btn-success' } }) }}
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block title %}
+{{parent()}} | add motor bikes
+{% endblock %}

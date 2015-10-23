@@ -1,0 +1,264 @@
+<?php
+
+namespace Rth\MotorbikeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Table(name="rth_motorbike_motorbike")
+ * @ORM\Entity
+ */
+class Motorbike {
+
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     * @Assert\NotBlank(message="Make can not be empty.")
+     * @ORM\Column(type="string")
+     */
+    protected $make;
+    
+    /**
+     * @Assert\NotBlank(message="Model can not be empty.")
+     * @ORM\Column(type="string")
+     */
+    protected $model;
+    
+    /**
+     * @Assert\NotBlank(message="Cc can not be empty.")
+     * @ORM\Column(type="decimal", scale=1)
+     */
+    protected $cc;
+    
+    /**
+     * @Assert\NotBlank(message="Weight can not be empty.")
+     * @ORM\Column(type="integer")
+     */
+    protected $weight;
+    
+    /**
+     * @Assert\NotBlank(message="Color can not be empty.")
+     * @ORM\Column(type="string",length=10)
+     */
+    protected $color;
+    
+    /**
+     * @Assert\NotBlank(message="Price can not be empty.")
+     * @ORM\Column(type="decimal", scale=2)
+     */
+    protected $price;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+    
+    /**
+     * @ORM\Column(type="array")
+     *
+     * @Assert\NotBlank(message="Please, upload the motor bike image as a jpg or png file.")
+     * @Assert\File(mimeTypes={ "image/jpg","image/png","image/jpeg" })
+     */
+    private $image;
+      
+
+    /**
+     * Set make
+     *
+     * @param string $make
+     * @return Motorbike
+     */
+    public function setMake($make)
+    {
+        $this->make = $make;
+
+        return $this;
+    }
+
+    /**
+     * Get make
+     *
+     * @return string 
+     */
+    public function getMake()
+    {
+        return $this->make;
+    }
+
+    /**
+     * Set model
+     *
+     * @param string $model
+     * @return Motorbike
+     */
+    public function setModel($model)
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    /**
+     * Get model
+     *
+     * @return string 
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+    /**
+     * Set cc
+     *
+     * @param string $cc
+     * @return Motorbike
+     */
+    public function setCc($cc)
+    {
+        $this->cc = $cc;
+
+        return $this;
+    }
+
+    /**
+     * Get cc
+     *
+     * @return string 
+     */
+    public function getCc()
+    {
+        return $this->cc;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param integer $weight
+     * @return Motorbike
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return integer 
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * Set color
+     *
+     * @param string $color
+     * @return Motorbike
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return string 
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     * @return Motorbike
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string 
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Motorbike
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Motorbike
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+}
