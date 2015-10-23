@@ -16,6 +16,7 @@
                     <td>model</td>
                     <td>make</td>
                     <td>price</td>
+                    <td></td>
                 </tr>
                 {% for motorBike in motorBikes %}
                     <tr>
@@ -23,6 +24,7 @@
                         <td>{{motorBike.model }}</td>
                         <td>{{motorBike.make }}</td>
                         <td>{{motorBike.price }}</td>
+                        <td><a href="{{path('rth_motorbike_motorbike_show',{'id': motorBike.id,'model': motorBike.model,'make': motorBike.make })}}">detail</a></td>
                     </tr>
                 {% endfor %}
             </table>

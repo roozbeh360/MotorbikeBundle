@@ -1,0 +1,26 @@
+{% extends "RthMotorbikeBundle::default_layout.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <img src="{{asset(motorBike.image.image)}}">
+            </div>
+            <div class="col-md-6">
+
+                <li>model : {{motorBike.model }}</li>
+                <li>make : {{motorBike.make }}</li>
+                <li>cc : {{motorBike.cc }}</li>
+                <li>weight : {{motorBike.weight }}</li>
+                <li>color : {{motorBike.color }}</li>
+                <li>price : {{motorBike.price }}</li>
+                <li>register date : {{motorBike.created | date }}</li>
+    
+            </div>   
+        </div>
+    </div>
+{% endblock %}
+{% block title %}
+    {{parent()}} | {{motorBike.make }} | {{motorBike.model }}
+{% endblock %}
