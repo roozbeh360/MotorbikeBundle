@@ -34,6 +34,7 @@ class Configuration implements ConfigurationInterface
                     ->arrayNode('default')
                         ->children()
                             ->integerNode('motorbikes_per_page')->end()
+                            ->scalarNode('filters')->end()
                         ->end()
                     ->end() // default
                 ->end()

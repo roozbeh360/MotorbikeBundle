@@ -7,6 +7,9 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-4">
+            {{ include( "RthMotorbikeBundle:Default:Motorbike/filter.html.twig",{'filterFields':filterFields}) }}
+        </div>
         <div class="col-md-8">
             <h6>total motor bikes{{motorBikes | length}}</h6>
 

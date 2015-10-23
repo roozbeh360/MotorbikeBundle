@@ -38,6 +38,7 @@ now add these lines in app/config.yml
                 image_tumbnail_height: 50 # image thumbnail height , imagick resizer
             default:
                 motorbikes_per_page: 5
+                filters: "color:text"  # example :   color:text,model:text,make:text
 		
 		
 update database schema 
@@ -55,6 +56,9 @@ to following admin page to add or list motorbikes .
 public page
 
         example.host/motorbike 
+
+if you wanna add some more filters it's better to take look at config section once again !
+we have limit filters and it depends on entity field .
 
 ## To Do 
 

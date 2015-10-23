@@ -1,0 +1,7 @@
+<form method="GET">
+    {% for name,type in filterFields %}
+        <label>{{name}}</label>
+        <input name="{{name}}" type="{{type}}"  />
+    {% endfor %}
+    <input type="submit" value="filter">
+</form>
