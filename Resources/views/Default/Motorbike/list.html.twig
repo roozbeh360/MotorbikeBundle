@@ -15,7 +15,8 @@
                     <td>image</td>
                     <td>model</td>
                     <td>make</td>
-                    <td>price</td>
+                    <th{% if motorBikes.isSorted('a.price') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(motorBikes, 'price', 'a.price') }}</th>
+                    <th{% if motorBikes.isSorted('a.created') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(motorBikes, 'Date', 'a.created') }}</th>
                     <td></td>
                 </tr>
                 {% for motorBike in motorBikes %}
@@ -24,6 +25,7 @@
                         <td>{{motorBike.model }}</td>
                         <td>{{motorBike.make }}</td>
                         <td>{{motorBike.price }}</td>
+                        <td>{{motorBike.created | date }}</td>
                         <td><a href="{{path('rth_motorbike_motorbike_show',{'id': motorBike.id,'model': motorBike.model,'make': motorBike.make })}}">detail</a></td>
                     </tr>
                 {% endfor %}
